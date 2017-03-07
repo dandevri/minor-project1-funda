@@ -3,7 +3,7 @@
   --funda-main-color: #f7a100;
   --funda-bg-color: #e6f2f7;
   --funda-footer-color: #ededed;
-  --funda-accent-color: #0071b3;
+  --funda-accent-color: #0071B3;
   --funda-active-color: #f8c463;
   --funda-links-color: #fff;
 
@@ -12,7 +12,8 @@
 
 body {
   font-family: 'proxima-nova';
-  background: var(--funda-bg-color);
+  background: var(--funda-main-color);
+	color: var(--funda-links-color);
 }
 
 /* ==========================================================================
@@ -40,11 +41,39 @@ input {
 	border: none;
 }
 
+img {
+	width: 100%;
+}
+
 /* ==========================================================================
   Tags
   ========================================================================== */
 form {
 	display: flex;
+}
+
+input {
+	margin: var(--scale-normal);
+	padding: .25em var(--scale-normal);
+	border-radius: var(--scale-normal);
+}
+
+/* ==========================================================================
+	Layout
+  ========================================================================== */
+.main-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: var(--scale-normal);
+	height: 80vh;
+}
+
+img {
+	position: absolute;
+	bottom: 0;
 }
 
 /* ==========================================================================
@@ -58,7 +87,7 @@ form {
 }
 
 [type="submit"] {
-	background-color: blue;
+	background-color: var(--funda-accent-color);
 	color: white;
 }
 
