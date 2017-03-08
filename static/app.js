@@ -57,10 +57,13 @@
 
 					var url = request.createURL(app.state);
 
-					request.get(url, function(results) {
-						console.log(results.Objects);
-						// render list met results
-					});
+					var callbackFunction = function(results) {
+						app.store = results.Objects; // save objects for eventual later use
+
+						render.toDOM('.house-list', render.list(results.Objects));
+					};
+
+					request.get(url, callbackFunction);
 				}
 			});
 
@@ -85,11 +88,14 @@
 		 * @param {Function} callbackFunction
 		 */
 		get: function(url, callbackFunction) {
+			// Fetch (request) the url
 			fetch(url)
 				.then(function(res) {
+					// Convert the response to usable json
 					return res.json();
 				})
 				.then(function(res) {
+					// Fire the callbackFunction with the result as parameter
 					callbackFunction(res);
 				})
 				.catch(function(error) {
@@ -121,6 +127,18 @@
 		 */
 		list: function(houseArray) {
 
+			return `
+				<ul>
+					${houseArray
+						.map(function(houseObject) {
+							return render.listItem(houseObject);
+						})
+						.reduce(function(html, string) {
+							return html += string;
+						})
+					}
+				</ul>
+			`;
 		},
 
 		/**
@@ -129,7 +147,11 @@
 		 * @return {String} HTML output of single list item
 		 */
 		listItem: function(houseObject) {
-
+			return `
+				<li>
+					<p>${houseObject.Adres}</p>
+				</li>
+			`;
 		},
 
 		/**
@@ -138,7 +160,7 @@
 		 * @param  {String} HTMLString A string with HTML
 		 */
 		toDOM: function(selectorString, HTMLString) {
-
+			document.querySelector(selectorString).innerHTML = HTMLString;
 		}
 	};
 
