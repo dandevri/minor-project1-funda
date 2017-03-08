@@ -8,7 +8,49 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	<body>
-	</body>
+		<form>
+			<fieldset name="stad">
+				<p>Hier komt nog een vraag</p>
+				<input type="text" placeholder="Typ hier je stad" id="stad">
+			</fieldset>
+
+			<fieldset name="prijs" disabled>
+				<label for="prijs_laag">Laag</label>
+				<input name="prijs" type="radio" id="prijs_laag"></input>
+				<label for="prijs_middel">Middel</label>
+				<input name="prijs" type="radio" id="prijs_middel"></input>
+				<label for="prijs_hoog">Hoog</label>
+				<input name="prijs" type="radio" id="prijs_hoog"></input>
+			</fieldset>
+
+			<fieldset name="persoon" disabled>
+				<select name="personen">
+					<option value="persoon1">1 persoon</option>
+					<option value="persoon2">2 personen</option>
+					<option value="persoon3">3 personen</option>
+				</select>
+			</fieldset>
+
+			<fieldset name="energielabel" disabled>
+				<label for="energie_laag">Laag</label>
+				<input name="energie" type="radio" id="energie_laag"></input>
+				<label for="energie_middel" type="radio">Middel</label>
+				<input name="energie" type="radio" id="energie_middel"></input>
+				<label for="energie_hoog" type="radio">Hoog</label>
+				<input name="energie" type="radio" id="energie_hoog"></input>
+			</fieldset>
+
+			<fieldset name="luxe" disabled>
+				<label for="luxe_laag">Laag</label>
+				<input name="luxe" type="radio" id="luxe_laag"></input>
+				<label for="luxe_middel">Middel</label>
+				<input name="luxe" type="radio" id="luxe_middel"></input>
+				<label for="luxe_hoog">Hoog</label>
+				<input name="luxe" type="radio" id="luxe_hoog"></input>
+			</fieldset>
+
+		</form>
+		<script src="static/vendor/config.js"></script>
 		<script src="static/vendor/routie.js"></script>
 		<script src="static/app.js"></script>
 		<script src="https://use.typekit.net/gco3gds.js"></script>
