@@ -32,3 +32,11 @@ form {
 	display: flex;
 	flex-direction: column;
 }
+
+fieldset {
+	display: block;
+}
+
+[disabled] {
+	display: none;
+}

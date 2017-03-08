@@ -9,21 +9,21 @@
 	</head>
 	<body>
 		<form>
-			<fieldset name="stad">
+			<fieldset>
 				<p>Hier komt nog een vraag</p>
-				<input type="text" placeholder="Typ hier je stad" id="stad">
+				<input name="stad" type="text" placeholder="Typ hier je stad" id="stad">
 			</fieldset>
 
-			<fieldset name="prijs" disabled>
+			<fieldset disabled>
 				<label for="prijs_laag">Laag</label>
-				<input name="prijs" type="radio" id="prijs_laag"></input>
+				<input name="prijs" type="radio" id="prijs_laag" value="laag" />
 				<label for="prijs_middel">Middel</label>
-				<input name="prijs" type="radio" id="prijs_middel"></input>
+				<input name="prijs" type="radio" id="prijs_middel" value="middel" />
 				<label for="prijs_hoog">Hoog</label>
-				<input name="prijs" type="radio" id="prijs_hoog"></input>
+				<input name="prijs" type="radio" id="prijs_hoog" value="hoog" />
 			</fieldset>
 
-			<fieldset name="persoon" disabled>
+			<fieldset disabled>
 				<select name="personen">
 					<option value="persoon1">1 persoon</option>
 					<option value="persoon2">2 personen</option>
@@ -31,7 +31,7 @@
 				</select>
 			</fieldset>
 
-			<fieldset name="energielabel" disabled>
+			<fieldset disabled>
 				<label for="energie_laag">Laag</label>
 				<input name="energie" type="radio" id="energie_laag"></input>
 				<label for="energie_middel" type="radio">Middel</label>
@@ -40,7 +40,7 @@
 				<input name="energie" type="radio" id="energie_hoog"></input>
 			</fieldset>
 
-			<fieldset name="luxe" disabled>
+			<fieldset disabled>
 				<label for="luxe_laag">Laag</label>
 				<input name="luxe" type="radio" id="luxe_laag"></input>
 				<label for="luxe_middel">Middel</label>
@@ -50,6 +50,10 @@
 			</fieldset>
 
 		</form>
+
+		<section class="house-list">
+		</section>
+
 		<script src="static/vendor/config.js"></script>
 		<script src="static/vendor/routie.js"></script>
 		<script src="static/app.js"></script>
