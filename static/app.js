@@ -19,8 +19,7 @@
 			stad: false,
 			prijs: false,
 			personen: false,
-			energie: false,
-			luxe: false
+			energie: false
 		},
 
 		/**
@@ -38,7 +37,7 @@
 				/**
 				 * Loop over property key
 				 */
-				Object.keys(app.state).every(function(propertyName, indexNumber) {
+				var allDone = Object.keys(app.state).every(function(propertyName, indexNumber) {
 					var value = app.state[propertyName]; // Get value of current property
 
 					// If the value hasn't been filled yet, toggle the corresponding fieldset
@@ -53,6 +52,16 @@
 					// Continue the loop
 					return true;
 				});
+
+				if(allDone) {
+
+					var url = request.createURL(app.state);
+
+					request.get(url, function(results) {
+						console.log(results.Objects);
+						// render list met results
+					});
+				}
 			});
 
 			form.addEventListener('submit', function(event) {
@@ -68,7 +77,7 @@
 		 * @return {String} API url
 		 */
 		createURL: function(stateObject) {
-
+			return `http://funda.kyrandia.nl/feeds/Aanbod.svc/json/${config.API_KEY}/?type=koop&zo=/${stateObject.stad}/${stateObject.prijs}/${stateObject.personen}`;
 		},
 		/**
 		 * Makes request based on state URL and fires callback when done.
@@ -76,7 +85,16 @@
 		 * @param {Function} callbackFunction
 		 */
 		get: function(url, callbackFunction) {
-
+			fetch(url)
+				.then(function(res) {
+					return res.json();
+				})
+				.then(function(res) {
+					callbackFunction(res);
+				})
+				.catch(function(error) {
+					console.error(error);
+				});
 		}
 	};
 

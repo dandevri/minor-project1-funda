@@ -4,7 +4,6 @@
 		<meta charset="utf-8">
 		<title>Funda Buurtchecker</title>
 		<link rel="stylesheet" href="static/style.css">
-		<script src="" charset="utf-8"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	<body>
@@ -16,39 +15,29 @@
 
 			<fieldset disabled>
 				<label for="prijs_laag">Laag</label>
-				<input name="prijs" type="radio" id="prijs_laag" value="laag" />
+				<input name="prijs" type="radio" id="prijs_laag" value="0-200000" />
 				<label for="prijs_middel">Middel</label>
-				<input name="prijs" type="radio" id="prijs_middel" value="middel" />
+				<input name="prijs" type="radio" id="prijs_middel" value="200000-500000" />
 				<label for="prijs_hoog">Hoog</label>
-				<input name="prijs" type="radio" id="prijs_hoog" value="hoog" />
+				<input name="prijs" type="radio" id="prijs_hoog" value="500000-700000" />
 			</fieldset>
 
 			<fieldset disabled>
 				<select name="personen">
-					<option value="persoon1">1 persoon</option>
-					<option value="persoon2">2 personen</option>
-					<option value="persoon3">3 personen</option>
+					<option value="2+kamers">1 persoon</option>
+					<option value="3+kamers">2 personen</option>
+					<option value="4+kamers">3 personen</option>
 				</select>
 			</fieldset>
 
 			<fieldset disabled>
 				<label for="energie_laag">Laag</label>
-				<input name="energie" type="radio" id="energie_laag"></input>
+				<input name="energie" type="radio" id="energie_laag" value="energielabel-a"/>
 				<label for="energie_middel" type="radio">Middel</label>
-				<input name="energie" type="radio" id="energie_middel"></input>
+				<input name="energie" type="radio" id="energie_middel" value="energielabel-b"/>
 				<label for="energie_hoog" type="radio">Hoog</label>
-				<input name="energie" type="radio" id="energie_hoog"></input>
+				<input name="energie" type="radio" id="energie_hoog" value="energielabel-c"/>
 			</fieldset>
-
-			<fieldset disabled>
-				<label for="luxe_laag">Laag</label>
-				<input name="luxe" type="radio" id="luxe_laag"></input>
-				<label for="luxe_middel">Middel</label>
-				<input name="luxe" type="radio" id="luxe_middel"></input>
-				<label for="luxe_hoog">Hoog</label>
-				<input name="luxe" type="radio" id="luxe_hoog"></input>
-			</fieldset>
-
 		</form>
 
 		<section class="house-list">
