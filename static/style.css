@@ -3,6 +3,8 @@
    ========================================================================== */
 
 :root {
+	margin: 0;
+	padding: 0;
   --funda-main-color: #f7a100;
   --funda-bg-color: #e6f2f7;
   --funda-footer-color: #ededed;
@@ -13,9 +15,15 @@
   --scale-normal: 1em;
 }
 
+html {
+	font-family: sans-serif;
+}
+
 body {
   font-family: 'proxima-nova';
   background: var(--funda-main-color);
+	box-sizing: border-box;
+	text-align: center;
 }
 
 /* ==========================================================================
@@ -25,12 +33,21 @@ input, label {
 	font-size: var(--scale-normal);
 }
 
+fieldset {
+	border: none;
+}
+
 /* ==========================================================================
-   Navigation
+   Layout
    ========================================================================== */
 form {
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	position: absolute;
+	width: 100vw;
 }
 
 fieldset {
@@ -39,4 +56,27 @@ fieldset {
 
 [disabled] {
 	display: none;
+}
+
+.flex {
+	display: flex;
+	flex-direction: column;
+}
+
+/* ==========================================================================
+   Attributes
+   ========================================================================== */
+
+input[type="radio"] { /* Not display none but 6.31 css secrets*/
+    position: absolute;
+    clip: rect(0,0,0,0);
+}
+
+label {
+	background-color: var(--funda-accent-color);
+	color: var(--funda-links-color);
+	border-radius: var(--scale-normal);
+	padding: .25em calc(2 * var(--scale-normal));
+	text-align: center;
+	margin: 1em;
 }
