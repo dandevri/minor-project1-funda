@@ -35,7 +35,7 @@
 				app.state[event.target.name] = event.target.value;
 
 				/**
-				 * Loop over property key
+				 * Loop over property key. Every returns boolean
 				 */
 				var allDone = Object.keys(app.state).every(function(propertyName, indexNumber) {
 					var value = app.state[propertyName]; // Get value of current property
@@ -52,12 +52,16 @@
 					// Continue the loop
 					return true;
 				});
-
+				/**
+				 * If allDone = do request
+				 */
 				if(allDone) {
+					// Disable all fieldsets
+					render.toggleFieldset();
 
 					var url = request.createURL(app.state);
 
-					var callbackFunction = function(results) {
+					var callbackFunction = function(results) { // Async, only fire callbackFunction if data is fetched.
 						app.store = results.Objects; // save objects for eventual later use
 
 						render.toDOM('.house-list', render.list(results.Objects));
@@ -117,7 +121,9 @@
 				fieldSet.disabled = true;
 			});
 
-			fieldsets[indexNumber].disabled = false;
+			if(indexNumber) {
+				fieldsets[indexNumber].disabled = false;
+			}
 		},
 
 		/**
@@ -126,7 +132,6 @@
 		 * @return {String} HTML string
 		 */
 		list: function(houseArray) {
-
 			return `
 				<ul>
 					${houseArray
