@@ -1,4 +1,4 @@
-(function() { // Iffe moest van Rijk
+(function() { // Iffe because Rijk said so
 
 	var app = {
 		init: function() {
@@ -35,7 +35,7 @@
 				app.state[event.target.name] = event.target.value;
 
 				/**
-				 * Loop over property key. Every returns boolean
+				 * Loop over property key. Every returns boolean.
 				 */
 				var allDone = Object.keys(app.state).every(function(propertyName, indexNumber) {
 					var value = app.state[propertyName]; // Get value of current property
@@ -65,6 +65,7 @@
 						app.store = results.Objects; // save objects for eventual later use
 
 						render.toDOM('.house-list', render.list(results.Objects));
+						render.toDOM('.navigation', render.header(results.Objects.length));
 					};
 
 					request.get(url, callbackFunction);
@@ -133,7 +134,7 @@
 		 */
 		list: function(houseArray) {
 			return `
-				<ul>
+				<div>
 					${houseArray
 						.map(function(houseObject) {
 							return render.listItem(houseObject);
@@ -142,7 +143,20 @@
 							return html += string;
 						})
 					}
-				</ul>
+				</div>
+			`;
+		},
+
+		header: function(number) {
+			return `
+					<nav>
+						<img class="logo" src="static/img/funda_logo.svg"/>
+						<h1>Funda Buurtchecker</h1>
+					</nav>
+					<div class="intro">
+						<p>${number} Resultaten</p>
+						<p>Hieronder vind je alle resultaten die overeen komen met de antwoorden van je buurtcheck</p>
+					</div>
 			`;
 		},
 
@@ -153,9 +167,14 @@
 		 */
 		listItem: function(houseObject) {
 			return `
-				<li>
-					<p>${houseObject.Adres}</p>
-				</li>
+			<article>
+					<img src="${houseObject.FotoLarge}"/>
+					<div class="description"
+						<p><span>€</span>${houseObject.Prijs.Koopprijs}</p>
+						<p><span>Straat:</span> ${houseObject.Adres}</p>
+						<p><span>Aantal kamers:</span> ${houseObject.AantalKamers}</p>
+					</div>
+			</article>
 			`;
 		},
 

@@ -21,20 +21,34 @@ html {
 
 body {
   font-family: 'proxima-nova';
-  background: var(--funda-main-color);
+  background: var(--funda-bg-color);
 	box-sizing: border-box;
-	text-align: center;
 }
 
 /* ==========================================================================
    Reset
    ========================================================================== */
+body {
+	margin: 0;
+	padding: 0;
+}
+
 input, label {
 	font-size: var(--scale-normal);
+	border: none;
 }
 
 fieldset {
 	border: none;
+}
+
+img {
+	max-width: 100%;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0;
 }
 
 /* ==========================================================================
@@ -64,12 +78,23 @@ fieldset {
 }
 
 /* ==========================================================================
-   Attributes
+   Tags
+   ========================================================================== */
+span {
+	font-weight: 700;
+}
+
+/* ==========================================================================
+   Form
    ========================================================================== */
 
-input[type="radio"] { /* Not display none but 6.31 css secrets*/
+input[type="radio"] { /* Not display none */
     position: absolute;
     clip: rect(0,0,0,0);
+}
+
+input[type="text"] {
+	background-color: none;
 }
 
 label {
@@ -79,4 +104,68 @@ label {
 	padding: .25em calc(2 * var(--scale-normal));
 	text-align: center;
 	margin: 1em;
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+nav {
+	background-color: var(--funda-main-color);
+	display: flex;
+	align-items: center;
+	padding: 1em 1em;
+	position: fixed;
+	top: 0;
+	width: 100vw;
+}
+
+nav h1 {
+	margin: 0;
+}
+
+nav > * {
+	padding: 0em .5em;
+}
+
+.logo {
+	width: 5em;
+}
+
+.intro {
+	background-color: var(--funda-links-color);
+	padding: var(--scale-normal);
+	width: 80vw;
+	border-bottom: .25em solid var(--funda-main-color);
+	margin: 4em auto 0em;
+}
+
+header {
+	background: url(./img/header_image.jpg) no-repeat center top;
+	background-size: auto 12.7em;
+	padding-top: 6.3em;
+}
+
+.house-list {
+	padding: 2em;
+}
+
+/* ==========================================================================
+   Articles
+   ========================================================================== */
+
+article {
+	background: var(--funda-links-color);
+	margin: 2em 0em;
+}
+
+article .description {
+	padding: var(--scale-normal);
+}
+
+article img {
+	padding: 0;
+	object-fit: cover;
+	width: 100%;
+	height: 10em;
 }
