@@ -60,6 +60,8 @@
 					render.toggleFieldset();
 
 					var url = request.createURL(app.state);
+					var header = document.querySelector('header'); // Remove the header because I have no idea how to do it in a clean way
+					header.classList.remove('hidden');
 
 					var callbackFunction = function(results) { // Async, only fire callbackFunction if data is fetched.
 						app.store = results.Objects; // save objects for eventual later use
@@ -170,7 +172,7 @@
 			<article>
 					<img src="${houseObject.FotoLarge}"/>
 					<div class="description"
-						<p><span>€</span>${houseObject.Prijs.Koopprijs}</p>
+						<p><span>€</span> ${houseObject.Prijs.Koopprijs}</p>
 						<p><span>Straat:</span> ${houseObject.Adres}</p>
 						<p><span>Aantal kamers:</span> ${houseObject.AantalKamers}</p>
 					</div>
