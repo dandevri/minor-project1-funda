@@ -13,6 +13,8 @@
   --funda-links-color: #fff;
 	--funda-gradient: linear-gradient(to top, rgb(230, 242, 247) 0%, rgb(230, 242, 247) 60%, rgb(255, 255, 255) 90%);
 
+	--box-shadow-1: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
   --scale-normal: 1em;
 }
 
@@ -57,6 +59,7 @@ ul {
 
 a {
 	text-decoration: none;
+	color: var(--funda-font-color);
 }
 
 /* ==========================================================================
@@ -70,11 +73,12 @@ form {
 	height: 100vh;
 	position: absolute;
 	width: 100vw;
+	background-image: var(--funda-gradient);
+	padding: var(--scale-normal);
 }
 
 fieldset {
 	display: block;
-	text-align: center;
 }
 
 [disabled] {
@@ -93,6 +97,21 @@ span {
 	font-weight: 700;
 }
 
+p.question {
+	font-size: 1.5em;
+	line-height: 1.5;
+}
+
+legend {
+	background-color: var(--funda-main-color);
+	width: max-content;
+	padding: .5em 1em;
+}
+
+article {
+	box-shadow: var(--box-shadow-1);
+}
+
 /* ==========================================================================
    Form
    ========================================================================== */
@@ -105,8 +124,7 @@ input[type="radio"] { /* Not display none */
 input[type="text"] {
 	background: none;
 	border-bottom: .1em solid var(--funda-main-color);
-	padding: var(--scale-normal);
-	transition: 250ms ease;
+	padding: var(--scale-normal) 0em;;
 }
 
 input[type="text"]:focus {
@@ -117,10 +135,16 @@ input[type="text"]:focus {
 label {
 	background-color: var(--funda-accent-color);
 	color: var(--funda-links-color);
-	border-radius: var(--scale-normal);
+	border-radius: .25em;
 	padding: .5em;
 	text-align: center;
-	margin: 1em;
+	margin: var(--scale-normal) 0em;
+}
+
+select {
+	font-size: var(--scale-normal);
+	border: .25em solid var(--funda-main-color);
+	padding: 1em .25em;
 }
 
 /* ==========================================================================
@@ -153,7 +177,7 @@ nav > * {
 	background-color: var(--funda-links-color);
 	padding: var(--scale-normal);
 	width: 80vw;
-	border-bottom: .25em solid var(--funda-main-color);
+	border-bottom: .15em solid var(--funda-main-color);
 	margin: 4em auto 0em;
 }
 
@@ -165,6 +189,10 @@ header {
 
 header.hidden {
 	background: none;
+}
+
+form.hidden {
+	display: none;
 }
 
 .house-list {
@@ -202,9 +230,10 @@ article img {
 	padding: calc(2 * var(--scale-normal));
 	height: 100vh;
 	text-align: center;
+	/* No variable because multiple background images don't work with CSS variables*/
 	background-image: url(img/doorzon-silhouet.svg), linear-gradient(to top, rgb(230, 242, 247) 0%, rgb(230, 242, 247) 60%, rgb(255, 255, 255) 90%);
 	background-repeat: no-repeat;
-	background-position: bottom center, center;
+	background-position: bottom center, center;3
 }
 
 .emoji {

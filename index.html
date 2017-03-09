@@ -2,22 +2,26 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Funda - Buurtchec</title>
+		<title>Funda - Buurtcheck</title>
 		<link rel="stylesheet" href="static/style.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel='shortcut icon' type='image/x-icon' href='http://assets.fstatic.nl/master_808/assets/favicon.ico' />
 	</head>
 	<body>
 		<form>
 			<fieldset>
 				<div class="flex">
-					<p>In welke buurt zou je graag willen wonen?</p>
-					<input name="stad" type="text" placeholder="Typ hier je stad" id="stad">
+					<legend>Vraag 1</legend>
+					<p class="question">In welke plaats zou je graag willen wonen?</p>
+					<input required name="stad" type="text" placeholder="Typ hier je stad" id="stad">
+					<p>* Alleen nederlandse woonplaatsen</p>
 				</div>
 			</fieldset>
 
 			<fieldset disabled>
 				<div class="flex">
-					<p>In welke prijsklasse zit je ongeveer?</p>
+					<legend>Vraag 2</legend>
+					<p class="question">In welke prijsklasse zit je ongeveer?</p>
 					<label for="prijs_laag">Laag</label>
 					<input name="prijs" type="radio" id="prijs_laag" value="0-200000" />
 					<label for="prijs_middel">Middel</label>
@@ -29,9 +33,10 @@
 
 			<fieldset disabled>
 				<div class="flex">
-					<p>Met hoeveel personen ben je van plan te gaan wonen?</p>
+					<legend>Vraag 3</legend>
+					<p class="question">Met hoeveel personen ben je van plan te gaan wonen?</p>
 					<select name="personen">
-						<option disable selected value> Kies een optie</option>
+						<option disable selected value> Kies het aantal personen ▾</option>
 						<option value="2+kamers">1 persoon</option>
 						<option value="3+kamers">2 personen</option>
 						<option value="4+kamers">3 personen</option>
@@ -41,7 +46,8 @@
 
 			<fieldset disabled>
 				<div class="flex">
-					<p>Stem je op partij van de dieren?</p>
+					<legend>Vraag 4</legend>
+					<p class="question">Stem je op partij van de dieren?</p>
 					<label for="energie_laag">Nee</label>
 					<input name="energie" type="radio" id="energie_laag" value="energielabel-a"/>
 					<label for="energie_middel" type="radio">Een beetje</label>

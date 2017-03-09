@@ -60,8 +60,11 @@
 					render.toggleFieldset();
 
 					var url = request.createURL(app.state);
-					var header = document.querySelector('header'); // Remove the header because I have no idea how to do it in a clean way
-					header.classList.remove('hidden');
+					var removeHeader = document.querySelector('header'); // Remove the header because I have no idea how to do it in a clean way
+					removeHeader.classList.remove('hidden');
+
+					var removeForm = document.querySelector('form'); // Remove form because I have no idea how to do it in a clean way
+					removeForm.classList.add('hidden');
 
 					var callbackFunction = function(results) { // Async, only fire callbackFunction if data is fetched.
 						app.store = results.Objects; // save objects for eventual later use
@@ -156,7 +159,7 @@
 						<h1>Funda Buurtchecker</h1>
 					</nav>
 					<div class="intro">
-						<p>${number} Resultaten</p>
+						<p><strong>${number} Resultaten</strong></p>
 						<p>Hieronder vind je alle resultaten die overeen komen met de antwoorden van je buurtcheck</p>
 					</div>
 			`;
@@ -169,14 +172,16 @@
 		 */
 		listItem: function(houseObject) {
 			return `
-			<article>
-					<img src="${houseObject.FotoLarge}"/>
-					<div class="description"
-						<p><span>€</span> ${houseObject.Prijs.Koopprijs}</p>
-						<p><span>Straat:</span> ${houseObject.Adres}</p>
-						<p><span>Aantal kamers:</span> ${houseObject.AantalKamers}</p>
-					</div>
-			</article>
+			<a href="${houseObject.URL}">
+				<article>
+						<img src="${houseObject.FotoLarge}"/>
+						<div class="description"
+							<p><span>€</span> ${houseObject.Prijs.Koopprijs}</p>
+							<p><span>Straat:</span> ${houseObject.Adres}</p>
+							<p><span>Aantal kamers:</span> ${houseObject.AantalKamers}</p>
+						</div>
+				</article>
+			</a>
 			`;
 		},
 
