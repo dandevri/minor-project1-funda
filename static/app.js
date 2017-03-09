@@ -19,7 +19,8 @@
 			stad: false,
 			prijs: false,
 			personen: false,
-			energie: false
+			energie: false,
+			buiten: false
 		},
 
 		/**
@@ -90,7 +91,7 @@
 		 * @return {String} API url
 		 */
 		createURL: function(stateObject) {
-			return `http://funda.kyrandia.nl/feeds/Aanbod.svc/json/${config.API_KEY}/?type=koop&zo=/${stateObject.stad}/${stateObject.prijs}/${stateObject.personen}`;
+			return `http://funda.kyrandia.nl/feeds/Aanbod.svc/json/${config.API_KEY}/?type=koop&zo=/${stateObject.stad}/${stateObject.prijs}/${stateObject.personen}/${stateObject.buiten}`;
 		},
 		/**
 		 * Makes request based on state URL and fires callback when done.
