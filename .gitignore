@@ -1,3 +1,6 @@
 # misc
 .DS_Store
 config.js
+.htaccess
+.htpasswd
+robots.txt
