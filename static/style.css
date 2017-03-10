@@ -74,7 +74,7 @@ form {
 	width: 100vw;
 	background-image: var(--funda-gradient);
 	padding: var(--scale-normal);
-	animation: fadein 4s;
+	animation: fadeIn 4s;
 }
 
 fieldset:not([disabled]) {
@@ -119,6 +119,10 @@ article {
 	box-shadow: var(--box-shadow-1);
 }
 
+h3 {
+	font-weight: 500;
+}
+
 /* ==========================================================================
    Form
    ========================================================================== */
@@ -126,6 +130,11 @@ article {
 input[type="radio"] { /* Not display none */
     position: absolute;
     clip: rect(0,0,0,0);
+}
+
+
+input[type="radio"]:focus + label {
+  box-shadow: 0 0 .1em .1em #58a;
 }
 
 input[type="text"] {
@@ -207,7 +216,7 @@ form.hidden {
 }
 
 .house-list div, nav, .navigation div {
-	animation: fadein 1s;
+	animation: fadeIn 1s;
 }
 /* ==========================================================================
    Articles
@@ -240,6 +249,7 @@ article img {
 	padding: calc(2 * var(--scale-normal));
 	height: 100vh;
 	text-align: center;
+	animation: fadeIn 2s;
 	/* No variable because multiple background images don't work with CSS variables*/
 	background-image: url(img/doorzon-silhouet.svg), linear-gradient(to top, rgb(230, 242, 247) 0%, rgb(230, 242, 247) 60%, rgb(255, 255, 255) 90%);
 	background-repeat: no-repeat;
@@ -292,7 +302,7 @@ article img {
   }
 }
 
-@keyframes fadein {
+@keyframes fadeIn {
     from { opacity: 0; }
     to   { opacity: 1; }
 }

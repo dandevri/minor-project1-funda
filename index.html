@@ -14,7 +14,7 @@
 					<legend>Vraag 1</legend>
 					<p class="question">In welke plaats zou je graag willen wonen?</p>
 					<input required name="stad" type="text" placeholder="Typ hier je stad" id="stad">
-					<p>* Alleen nederlandse woonplaatsen</p>
+					<p>* Alleen Nederlandse woonplaatsen</p>
 				</div>
 			</fieldset>
 
@@ -22,11 +22,11 @@
 				<div class="flex">
 					<legend>Vraag 2</legend>
 					<p class="question">In welke prijsklasse zit je ongeveer?</p>
-					<label for="prijs_laag">Laag</label>
+					<label for="prijs_laag">Budgetvriendelijk</label>
 					<input name="prijs" type="radio" id="prijs_laag" value="0-200000" />
-					<label for="prijs_middel">Middel</label>
+					<label for="prijs_middel">Modaal inkomen</label>
 					<input name="prijs" type="radio" id="prijs_middel" value="200000-500000" />
-					<label for="prijs_hoog">Hoog</label>
+					<label for="prijs_hoog">Hoog salaris</label>
 					<input name="prijs" type="radio" id="prijs_hoog" value="500000-700000" />
 				</div>
 			</fieldset>
@@ -40,6 +40,7 @@
 						<option value="2+kamers">1 persoon</option>
 						<option value="3+kamers">2 personen</option>
 						<option value="4+kamers">3 personen</option>
+						<option value="5+kamers">4 personen</option>
 					</select>
 				</div>
 			</fieldset>
@@ -47,25 +48,40 @@
 			<fieldset disabled>
 				<div class="flex">
 					<legend>Vraag 4</legend>
-					<p class="question">Stem je op partij van de dieren?</p>
-					<label for="energie_laag">Nee</label>
-					<input name="energie" type="radio" id="energie_laag" value="energielabel-a"/>
-					<label for="energie_middel" type="radio">Een beetje</label>
-					<input name="energie" type="radio" id="energie_middel" value="energielabel-b"/>
-					<label for="energie_hoog" type="radio">Ja</label>
-					<input name="energie" type="radio" id="energie_hoog" value="energielabel-c"/>
+					<p class="question">Welk vervoersmiddel gebruik het meest?</p>
+					<label for="vervoer_fiets">Fiets</label>
+					<input name="vervoer" type="radio" id="vervoer_fiets" value=" "/>
+					<label for="vervoer_ov">Openbaar vervoer</label>
+					<input name="vervoer" type="radio" id="vervoer_ov" value=" "/>
+					<label for="vervoer_auto1" type="radio">1 auto</label>
+					<input name="vervoer" type="radio" id="vervoer_auto1" value="1-auto-garage"/>
+					<label for="vervoer_auto2" type="radio">2 auto's</label>
+					<input name="vervoer" type="radio" id="vervoer_auto2" value="2+autos-garage"/>
 				</div>
 			</fieldset>
 
 			<fieldset disabled>
 				<div class="flex">
 					<legend>Vraag 5</legend>
-					<p class="question">Hoe moet het er buiten uitzien?</p>
-					<label for="buiten_balkon">Balkon</label>
+					<p class="question">Ik vind het het milieu belangrijk.</p>
+					<label for="energie_laag">Ja</label>
+					<input name="energie" type="radio" id="energie_laag" value="energielabel-a"/>
+					<label for="energie_middel" type="radio">Een beetje</label>
+					<input name="energie" type="radio" id="energie_middel" value="energielabel-b"/>
+					<label for="energie_hoog" type="radio">Nee</label>
+					<input name="energie" type="radio" id="energie_hoog" value="energielabel-c"/>
+				</div>
+			</fieldset>
+
+			<fieldset disabled>
+				<div class="flex">
+					<legend>Vraag 6</legend>
+					<p class="question">Ben je een buitenmens?</p>
+					<label for="buiten_balkon">Ik ben graag buiten</label>
 					<input name="buiten" type="radio" id="buiten_balkon" value="balkon"/>
-					<label for="buiten_dakterras" type="radio">Dakterras</label>
+					<label for="buiten_dakterras" type="radio">Ik hou meer van hoogte</label>
 					<input name="buiten" type="radio" id="buiten_dakterras" value="dakterras"/>
-					<label for="buiten_tuin" type="radio">Tuin</label>
+					<label for="buiten_tuin" type="radio">Ik haat natuur</label>
 					<input name="buiten" type="radio" id="buiten_tuin" value="tuin"/>
 				</div>
 			</fieldset>

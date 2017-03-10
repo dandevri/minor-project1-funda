@@ -5,6 +5,7 @@
 			this.listenToForm();
 		},
 
+
 		/**
 		 * Array from all the houses
 		 * @type {Array}
@@ -19,6 +20,7 @@
 			stad: false,
 			prijs: false,
 			personen: false,
+			vervoer: false,
 			energie: false,
 			buiten: false
 		},
